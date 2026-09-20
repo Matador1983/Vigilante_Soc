@@ -10,6 +10,7 @@ Vigilante SOC es una plataforma de ciberseguridad que monitorea bandejas de entr
 
 | Dashboard del Cliente | Panel Wazuh SOC | Backoffice Admin |
 |:---:|:---:|:---:|
+| <img src="assets/Dashboard.jpg" width="100%"> | <img src="assets/Wazuh_soc.jpg" width="100%"> | <img src="assets/Backoffice.jpg" width="100%"> |
 | Inteligencia de amenazas con alertas agrupadas | Alertas Wazuh en tiempo real con análisis IA | Panel de administración con gestión de suscripciones |
 
 ---
