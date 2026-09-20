@@ -265,5 +265,5 @@ DASHBOARD_URL=
 
 ## 👤 Autor
 
-**Antonio Izzo** — Ingeniero en Ciberseguridad & Desarrollador de Software  
+**Lic. Antonio Izzo**  
 Buenos Aires, Argentina  
