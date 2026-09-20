@@ -262,16 +262,8 @@ TOTP_SECRET=
 DASHBOARD_URL=
 ```
 
----
-
-## 📄 Licencia
-
-Este proyecto es propietario. Todos los derechos reservados © 2026 Antonio Izzo.
-
----
 
 ## 👤 Autor
 
 **Antonio Izzo** — Ingeniero en Ciberseguridad & Desarrollador de Software  
 Buenos Aires, Argentina  
-[vigilantesoc.com.ar](https://vigilantesoc.com.ar)
