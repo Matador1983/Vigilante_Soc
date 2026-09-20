@@ -19,46 +19,7 @@ Vigilante SOC es una plataforma de ciberseguridad que monitorea bandejas de entr
 <p align="center">
   <img src="assets/arquitectura_general.jpg" alt="Arquitectura General" width="100%">
 </p>
-```
 
-
-
-┌─────────────────────────────────────────────────────────────┐
-│                    Cloudflare Tunnel                         │
-│   app · api · admin · wazuh · siem · status · m             │
-│                vigilantesoc.com.ar                           │
-└────────────────────┬────────────────────────────────────────┘
-                     │
-┌────────────────────▼────────────────────────────────────────┐
-│             Ubuntu Server 24.04 LTS                          │
-│          Ryzen 5 3400G · 16GB RAM                           │
-│                                                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
-│  │  FastAPI     │  │  Streamlit   │  │  Streamlit       │  │
-│  │  API :8000   │  │  Dashboard   │  │  Backoffice      │  │
-│  │              │  │  :8501       │  │  :8502           │  │
-│  └──────────────┘  └──────────────┘  └──────────────────┘  │
-│                                                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────┐  │
-│  │  WorkerMulti │  │  Wazuh       │  │  Wazuh Telegram  │  │
-│  │  Worker IA   │  │  Dashboard   │  │  Alertas         │  │
-│  │              │  │  :8504       │  │                  │  │
-│  └──────────────┘  └──────────────┘  └──────────────────┘  │
-│                                                             │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │            Wazuh 4.14.7 (Docker)                    │   │
-│  │   Manager · Indexer · Dashboard                     │   │
-│  │   Agentes: Windows-Dark · darkeggs · Kali           │   │
-│  └─────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-                     │
-          ┌──────────▼──────────┐
-          │   Supabase (PG)     │
-          │  clientes           │
-          │  buzones_monitoreados│
-          │  amenazas_detectadas│
-          └─────────────────────┘
-```
 
 ---
 
@@ -222,34 +183,6 @@ CREATE TABLE amenazas_detectadas (
 <p align="center">
   <img src="assets/arquitectura_general.jpg" alt="Arquitectura General - Vigilante SOC" width="100%">
 </p>
-```
-
-
-Correo recibido (no leído, últimas 24hs)
-         │
-         ▼
-  detector_links.py
-  (análisis de URLs — sin costo de IA)
-         │
-         ▼
-  GPT-OSS-20B (triaje rápido)
-  → BAJO / MEDIO / ALTO / CRÍTICO
-         │
-    MEDIO+ ──────────────────────────▶ GPT-OSS-120B (confirmación)
-         │                                    │
-         ▼                                    ▼
-    Guardar en BD                     Guardar en BD
-         │                                    │
-    BAJO/MEDIO                        ALTO/CRÍTICO
-    (silencioso)                              │
-                                              ▼
-                                    GPT-OSS-20B (explicación)
-                                    "Qué significa esto para vos"
-                                              │
-                                              ▼
-                                    Alerta Telegram → cliente
-```
-
 ---
 
 ## 🚀 Decisiones de Arquitectura
