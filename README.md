@@ -16,11 +16,12 @@ Vigilante SOC es una plataforma de ciberseguridad que monitorea bandejas de entr
 
 ## 🏗️ Arquitectura General
 
-```
-
 <p align="center">
   <img src="assets/arquitectura_general.jpg" alt="Arquitectura General" width="100%">
 </p>
+```
+
+
 
 ┌─────────────────────────────────────────────────────────────┐
 │                    Cloudflare Tunnel                         │
@@ -218,11 +219,11 @@ CREATE TABLE amenazas_detectadas (
 ---
 
 ## 🤖 Pipeline de IA
-
-```
 <p align="center">
   <img src="assets/arquitectura_general.jpg" alt="Arquitectura General - Vigilante SOC" width="100%">
 </p>
+```
+
 
 Correo recibido (no leído, últimas 24hs)
          │
