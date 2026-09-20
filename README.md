@@ -262,7 +262,26 @@ TOTP_SECRET=
 DASHBOARD_URL=
 ```
 
+### Requesitos del sistema.
 
+```
+fastapi
+uvicorn
+supabase
+python-dotenv
+cryptography
+bcrypt
+groq
+httpx
+msal
+google-auth
+google-auth-oauthlib
+google-api-python-client
+streamlit
+pandas
+plotly
+
+```
 ## 👤 Autor
 
 **Lic. Antonio Izzo**  
